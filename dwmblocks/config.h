@@ -3,11 +3,11 @@ static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 	{"",	"/home/png76/.local/bin/statusbar/sb-volume",	1,	10},
 	{"",	"/home/png76/.local/bin/statusbar/sb-battery",	5,	3},
-        {"",    "/home/png76/.local/bin/statusbar/sb-cpu",  30,      1},
-        {"🖥️",    "/home/png76/.local/bin/statusbar/sb-usagecpu",  30,      1},
-        {"🧠",    "/home/png76/.local/bin/statusbar/sb-memory",  5,      3},
-        {"",    "/home/png76/.local/bin/statusbar/sb-disk",  20000,      3},
-	{"📅",	"/home/png76/.local/bin/statusbar/sb-clock",	60,	1},
+        {"",    "/home/png76/.local/bin/statusbar/sb-cpu",  30,      9},
+        {"🖥️",    "/home/png76/.local/bin/statusbar/sb-usagecpu",  30,      8},
+        {"🧠",    "/home/png76/.local/bin/statusbar/sb-memory",  5,      7},
+        {"",    "/home/png76/.local/bin/statusbar/sb-disk",  20000,      6},
+	{"📅",	"/home/png76/.local/bin/statusbar/sb-clock",	60,	11},
 };
 
 //Sets delimiter between status commands. NULL character ('\0') means no delimiter.
