@@ -148,10 +148,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_0,	        tag,             {.ui = ~0 } },
 
 	{ MODKEY|ControlMask,           XK_q,           quit,            {1} }, // renew dwm
+        { MODKEY|ShiftMask,             XK_q,           quit,            {0} },
 	{ MODKEY,			XK_Tab,		view,		 {0} },
 	{ MODKEY,			XK_q,		killclient,	 {0} },
         { MODKEY,                       XK_k,           spawn,           SHCMD("thunar") },
-        { MODKEY|ShiftMask,             XK_n,           spawn,           SHCMD("kitty -e nvim ~/nixos-config/nixos/packages.nix") },
+        { MODKEY|ShiftMask,             XK_n,           spawn,           SHCMD("kitty -e nvim ~/nixconf/nixos/configuration.nix") },
 
 	{ MODKEY|ShiftMask,             XK_backslash,   killunsel,       {0} },
 	{ MODKEY,			XK_r,		setlayout, 	 {.v = &layouts[0]} }, /* tile */
@@ -231,24 +232,16 @@ static Key keys[] = {
 //	{ ShiftMask,			XK_F2,   	spawn,		 SHCMD("pamixer --set-volume 0; pkill -RTMIN+6 dwmblocks") },
 	{ 0,			        XK_F3,   	spawn,		 SHCMD("pamixer --allow-boost -i 5; pkill -RTMIN+6 dwmblocks") },
 //	{ ShiftMask,			XK_F3,   	spawn,		 SHCMD("pamixer --set-volume 100; pkill -RTMIN+6 dwmblocks") },
-	{ 0,				XK_F4,   	spawn,		 SHCMD("pactl set-source-mute 'alsa_input.pci-0000_00_1f.3.analog-stereo' toggle") },
+        { 0,                            XK_F4,          spawn,           SHCMD("pamixer --default-source -t") },
         { 0,                            XK_Print,       spawn,           SHCMD("flameshot gui") },
  	{ 0,				XK_F5,  	spawn,		 SHCMD("brightnessctl set 5%-") },
  	{ ShiftMask,			XK_F5,		spawn,		 SHCMD("brightmessctl set 10%-") },
  	{ 0,				XK_F6,		spawn,		 SHCMD("brightnessctl set 5%+") },
  	{ ShiftMask,			XK_F6,  	spawn,	 	 SHCMD("brightnessctl set 10%+") },
- 	{ 0,				XK_F9,  	spawn,		 {.v = (const char*[]){ "playerctl", "pause", NULL } } },
- 	{ 0,				XK_F10,		spawn,		 {.v = (const char*[]){ "playerctl", "play", NULL } } },
- 	{ 0,				XK_F11,  	spawn,		 {.v = (const char*[]){ "playerctl", "previous", NULL } } },
- 	{ 0,				XK_F12,		spawn,		 {.v = (const char*[]){ "playerctl", "next", NULL } } },
-
 	/* Other keybinds */
  	{ MODKEY, 			XK_b,		spawn,		 {.v = (const char*[]){ BROWSER, NULL } } },
  	{ MODKEY,			XK_n,		spawn,		 {.v = (const char*[]){ TERMINAL, "-e", "lf", NULL } } },
  	{ MODKEY,			XK_d,		spawn,		 {.v = (const char*[]){ "dmenu_run", NULL } } },
- 	{ MODKEY|ShiftMask,		XK_q,		spawn,		 {.v = (const char*[]){ "quit", NULL } } },
- 	{ MODKEY|ShiftMask,		XK_d,	        spawn,		 {.v = (const char*[]){ "dmkill", NULL } } },
- 	{ MODKEY,			XK_numbersign,  spawn,		 {.v = (const char*[]){ "dmnote", NULL } } },
 };
 
 /* Button definitions */
@@ -264,7 +257,6 @@ static Button buttons[] = {
 	{ ClkStatusText,        ShiftMask,   	    Button3,      sigdwmblocks,    {.i = 7} },
 	{ ClkStatusText,        ControlMask,   	    Button1,      sigdwmblocks,    {.i = 8} },
 
-	{ ClkStatusText,        ShiftMask,          Button2,      spawn,           SHCMD("$TERMINAL -e $EDITOR ~/.local/src/dwmblocks/config.h") },
 	{ ClkClientWin,         MODKEY,             Button1,      movemouse,       {0} },
 	{ ClkClientWin,         MODKEY|ShiftMask,   Button1,      togglefloating,  {0} },
 	{ ClkClientWin,         MODKEY,             Button2,      defaultgaps,     {0} },
