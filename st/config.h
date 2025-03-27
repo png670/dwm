@@ -108,34 +108,33 @@ float alpha = 0.8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#161825",
-	"#e27878",
-	"#a3be8c",
-	"#ebcb8b",
-	"#84a0c6",
-	"#a093c7",
-	"#89b8c2",
-	"#cfd1dd",
+	"#26233a",    // color0
+	"#eb6f92",    // color1
+	"#98C379",    // color2
+	"#f6c177",    // color3
+	"#9ccfd8",    // color4
+	"#c4a7e7",    // color5
+	"#c4a7e7",    // color6
+	"#e0def4",    // color7
 
 	/* 8 bright colors */
-	"#575b73",
-	"#e27878",
-	"#a3b38c",
-	"#ebcb8b",
-	"#84a0c6",
-	"#a093c7",
-	"#89b8c2",
-	"#cfd1dd",
+	"#6e6a86",    // color8
+	"#eb6f92",    // color9
+	"#98C379",    // color10
+	"#f6c177",    // color11
+	"#9ccfd8",    // color12
+	"#c4a7e7",    // color13
+	"#c4a7e7",    // color14
+	"#e0def4",    // color15
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#bbc2cf", /* 256 -> cursor */
-	"#282c34", /* 257 -> rev cursor */
-	"#13141d", /* 258 -> bg */
-	"#d7d7d7", /* 259 -> fg */
+	"#e0def4",    // cursor
+	"#403d52",    // rev cursor
+	"#191724",    // bg
+	"#e0def4",    // fg
 };
-
 
 /*
  * Default colors (colorname index)
